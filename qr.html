@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>우리 회사 - 링크 모음</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px 30px;
+            max-width: 400px;
+            width: 100%;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .profile {
+            margin-bottom: 30px;
+        }
+        
+        .profile img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            border: 3px solid #667eea;
+        }
+        
+        .profile h1 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+        
+        .profile p {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .link-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px 20px;
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 12px;
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .link-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            border-color: #667eea;
+        }
+        
+        .link-btn:active {
+            transform: translateY(0);
+        }
+        
+        .link-btn .icon {
+            font-size: 20px;
+            margin-right: 12px;
+        }
+        
+        .link-btn .text {
+            flex: 1;
+            text-align: center;
+        }
+        
+        /* 각 링크별 색상 */
+        .link-btn.shop:hover { background: #e8f5e8; border-color: #28a745; }
+        .link-btn.instagram:hover { background: #fce4ec; border-color: #e91e63; }
+        .link-btn.blog:hover { background: #e3f2fd; border-color: #2196f3; }
+        .link-btn.contact:hover { background: #fff3e0; border-color: #ff9800; }
+        .link-btn.youtube:hover { background: #ffebee; border-color: #f44336; }
+        .link-btn.kakao:hover { background: #fff8e1; border-color: #ffeb3b; }
+        
+        .footer {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            color: #999;
+            font-size: 12px;
+        }
+        
+        /* 모바일 최적화 */
+        @media (max-width: 480px) {
+            .container {
+                padding: 30px 20px;
+                margin: 10px;
+            }
+            
+            .profile h1 {
+                font-size: 20px;
+            }
+            
+            .link-btn {
+                padding: 12px 15px;
+            }
+            
+            .link-btn .icon {
+                font-size: 18px;
+                margin-right: 10px;
+            }
+        }
+        
+        /* 로딩 애니메이션 */
+        .container {
+            animation: fadeInUp 0.6s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .links .link-btn {
+            animation: slideInLeft 0.6s ease-out forwards;
+            animation-delay: calc(var(--delay) * 0.1s);
+            opacity: 0;
+        }
+        
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="profile">
+            <!-- 로고나 프로필 이미지가 있다면 아래 주석을 해제하고 src 수정 -->
+            <!-- <img src="logo.png" alt="로고"> -->
+            <div style="width: 80px; height: 80px; background: #667eea; border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px; font-weight: bold;">
+                Logo
+            </div>
+            <h1>우리 회사</h1>
+            <p>모든 링크를 한 곳에서 확인하세요</p>
+        </div>
+        
+        <div class="links">
+            <a href="https://yourshop.com" class="link-btn shop" style="--delay: 1">
+                <span class="icon">🛒</span>
+                <span class="text">온라인 쇼핑몰</span>
+            </a>
+            
+            <a href="https://instagram.com/youraccount" class="link-btn instagram" style="--delay: 2">
+                <span class="icon">📷</span>
+                <span class="text">인스타그램</span>
+            </a>
+            
+            <a href="https://yourblog.com" class="link-btn blog" style="--delay: 3">
+                <span class="icon">📝</span>
+                <span class="text">공식 블로그</span>
+            </a>
+            
+            <a href="https://youtube.com/@yourchannel" class="link-btn youtube" style="--delay: 4">
+                <span class="icon">🎥</span>
+                <span class="text">유튜브 채널</span>
+            </a>
+            
+            <a href="http://pf.kakao.com/_your_id" class="link-btn kakao" style="--delay: 5">
+                <span class="icon">💬</span>
+                <span class="text">카카오톡 상담</span>
+            </a>
+            
+            <a href="tel:010-1234-5678" class="link-btn contact" style="--delay: 6">
+                <span class="icon">📞</span>
+                <span class="text">전화 문의</span>
+            </a>
+        </div>
+        
+        <div class="footer">
+            © 2025 우리 회사. All rights reserved.
+        </div>
+    </div>
+    
+    <script>
+        // 클릭 추적 (구글 애널리틱스 등과 연동 가능)
+        document.querySelectorAll('.link-btn').forEach(link => {
+            link.addEventListener('click', function(e) {
+                const linkText = this.querySelector('.text').textContent;
+                console.log(`링크 클릭: ${linkText}`);
+                
+                // 구글 애널리틱스 이벤트 추적 예시
+                // gtag('event', 'click', {
+                //     event_category: 'QR Links',
+                //     event_label: linkText
+                // });
+            });
+        });
+        
+        // 터치 피드백 (모바일)
+        document.querySelectorAll('.link-btn').forEach(link => {
+            link.addEventListener('touchstart', function() {
+                this.style.transform = 'scale(0.98)';
+            });
+            
+            link.addEventListener('touchend', function() {
+                this.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
